@@ -32,16 +32,13 @@ WHERE email IN (
     'muscle@hexschooltest.io',
     'starplatinum@hexschooltest.io')
 AND role = 'USER';
-
 -- 1-3 刪除：刪除USER 資料表中，用 Email 找到透明人，並刪除該筆資料
 DELETE FROM "USER"
 WHERE email = 'opacity0@hexschooltest.io';
-
 -- 1-4 查詢：取得USER 資料表目前所有用戶數量（提示：使用count函式）
 SELECT
 	COUNT(*) AS 用戶數量
 FROM "USER";
-
 -- 1-5 查詢：取得 USER 資料表所有用戶資料，並列出前 3 筆（提示：使用limit語法）
 SELECT 
 	id AS 編號,
@@ -69,7 +66,6 @@ INSERT INTO "CREDIT_PACKAGE"(name, credit_amount, price) VALUES
 ('7 堂組合包方案',7,1400),
 ('14 堂組合包方案',14,2520),
 ('21 堂組合包方案',21,4800);
-
 -- 2-2. 新增：在 `CREDIT_PURCHASE` 資料表，新增三筆資料：（請使用 name 欄位做子查詢）
     -- 1. `王小明` 購買 `14 堂組合包方案`
     -- 2. `王小明` 購買 `21 堂組合包方案`
@@ -105,7 +101,6 @@ INSERT INTO "COACH" (user_id, experience_years) VALUES
 ((SELECT id FROM "USER" WHERE email = 'lee2000@hexschooltest.io'),2),
 ((SELECT id FROM "USER" WHERE email = 'muscle@hexschooltest.io'),2),
 ((SELECT id FROM "USER" WHERE email = 'starplatinum@hexschooltest.io'),2);
-
 -- 3-2. 新增：承1，為三名教練新增專長資料至 `COACH_LINK_SKILL` ，資料需求如下：
     -- 1. 所有教練都有 `重訓` 專長
     -- 2. 教練`肌肉棒子` 需要有 `瑜伽` 專長
