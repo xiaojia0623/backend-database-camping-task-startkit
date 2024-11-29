@@ -214,7 +214,7 @@ INSERT INTO "COURSE_BOOKING"(user_id, course_id, booking_at, status) VALUES
 ((SELECT id FROM "USER" WHERE email = 'wXlTq@hexschooltest.io'),
   (SELECT id FROM "COURSE" WHERE user_id = (
     SELECT id FROM "USER" WHERE email = 'lee2000@hexschooltest.io')
-  ),'2024-11-24 17:10:25','即將授課');
+  ),'2024-11-24 17:10:25','即將授課'); 
 
 -- 5-4. 查詢：取得王小明所有的預約紀錄，包含取消預約的紀錄
 SELECT *
